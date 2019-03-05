@@ -1,0 +1,10 @@
+---
+only_unique:
+  - test1
+  - test2
+  - test3
+has_duplicates:
+  - test1
+  - test2
+  - test3
+  - test3

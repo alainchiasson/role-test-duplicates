@@ -1,0 +1,6 @@
+---
+# defaults file for role-test-duplicates
+list:
+  - value1
+  - value2
+msg: "Defult Message"

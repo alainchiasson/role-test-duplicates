@@ -1,0 +1,17 @@
+---
+# tasks file for role-test-duplicates
+- name: print message
+  debug:
+    msg: "{{ msg }}"
+
+- name: print values
+  debug:
+    msg: "{{ list }}"
+
+- name: print test result
+  debug:
+    msg: "List items are unique : {{ list | unique == list }}"
+
+- name: assert value
+  assert:
+    that: "{{ list | unique == list }}"

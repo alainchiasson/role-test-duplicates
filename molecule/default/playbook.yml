@@ -1,0 +1,15 @@
+---
+- name: Converge
+  hosts: all
+  vars:
+    source_file: "{{ lookup('file', 'mock_vars.yml') | from_yaml }}"
+    has_duplicates: "{{ source_file.has_duplicates }}"
+    only_unique: "{{ source_file.only_unique }}"
+  roles:
+    - role: "{{ lookup('env', 'MOLECULE_PROJECT_DIRECTORY') | basename }}"
+    - role: "{{ lookup('env', 'MOLECULE_PROJECT_DIRECTORY') | basename }}"
+      msg: "Only Unique"
+      list: "{{ only_unique }}"
+    - role: "{{ lookup('env', 'MOLECULE_PROJECT_DIRECTORY') | basename }}"
+      msg: "Has Duplicates"
+      list: "{{ has_duplicates }}"
