@@ -15,3 +15,8 @@
 - name: assert value
   assert:
     that: "{{ list | unique == list }}"
+
+- name: Assertion passed do something
+  debug:
+    msg: "Here is a value : {{ item }}"
+  with_items: "{{ list }}"
